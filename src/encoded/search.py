@@ -541,7 +541,7 @@ def search_result_actions(request, doc_types, es_results, position=None):
                                                 txt='hub.txt')
                     browser_urls = {}
                     pos = None
-                    if 'variant-search' in request.url and position is not None:
+                    if 'region-search' in request.url and position is not None:
                         pos = position
                     # ucsc_url = vis_format_url("ucsc", hub_url, assembly, pos)
                     # if ucsc_url is not None:
@@ -558,7 +558,7 @@ def search_result_actions(request, doc_types, es_results, position=None):
     # generate batch download URL for experiments
     # TODO we could enable them for Datasets as well here, but not sure how well it will work
     # batch download disabled for variant-search results
-    if '/variant-search/' not in request.url:
+    if '/region-search/' not in request.url:
         #if (doc_types == ['Experiment'] or doc_types == ['Annotation']) and any(
         if (doc_types == ['Experiment'] or doc_types == ['Annotation']) and any(
                 bucket['doc_count'] > 0

@@ -58,10 +58,10 @@ ENCODED_REGION_REQUIREMENTS = {
     #    'output_type': ['semi-automated genome annotation'],
     #    'file_format': ['bed']
     #}
-    #'accessible chromatin': {
-    #    'output_type': ['peaks'],
-    #    'file_format': ['bed']
-    #    }
+    'accessible chromatin': {
+        'output_type': ['peaks'],
+        'file_format': ['bed']
+        }
     #'eQTL': {
     #    'file_type': ['bed bed3+'],
     #    'file_format': ['bed']

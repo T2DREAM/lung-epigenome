@@ -73,6 +73,7 @@ ORDER = [
     'histone_chipseq_quality_metric',
     'generic_quality_metric',
     'image',
+    'gene',
     'page'
 ]
 
