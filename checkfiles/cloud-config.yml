@@ -26,8 +26,8 @@ runcmd:
 
 - set -ex
 - systemctl daemon-reload  # See https://bugs.launchpad.net/cloud-init/+bug/1449318
-- mkdir -p /s3/t2depi-files
-- mkdir -p /s3/t2depi-files-dev
+- mkdir -p /s3/lungepi-files
+- mkdir -p /s3/lungepi-files-dev
 
 - curl -sS -L -o /usr/local/bin/goofys https://github.com/kahing/goofys/releases/download/v0.0.5/goofys
 - chmod +x /usr/local/bin/goofys
@@ -48,7 +48,7 @@ runcmd:
 
 - mkdir /opt/encoded
 - chown build:build /opt/encoded
-- sudo -u build git clone --no-checkout https://github.com/T2DREAM/t2dream-portal.git /opt/encoded
+- sudo -u build git clone --no-checkout https://github.com/T2DREAM/lung-epigenome.git /opt/encoded
 - sudo -u build git -C /opt/encoded checkout %(COMMIT)s
 - chmod +x /opt/encoded/checkfiles/script
 
@@ -69,8 +69,8 @@ users:
   system: true
 
 mounts:
-- [ "goofys-ulimit#t2depi-files-dev", "/s3/t2depi-files-dev", "fuse", "_netdev,allow_other,--file-mode=0444,--dir-mode=0555,--stat-cache-ttl=0", "0", "0" ]
-- [ "goofys-ulimit#t2depi-files-dev", "/s3/t2depi-files-dev", "fuse", "_netdev,allow_other,--file-mode=0444,--dir-mode=0555,--stat-cache-ttl=0", "0", "0" ]
+- [ "goofys-ulimit#lungepi-files-dev", "/s3/lungepi-files-dev", "fuse", "_netdev,allow_other,--file-mode=0444,--dir-mode=0555,--stat-cache-ttl=0", "0", "0" ]
+- [ "goofys-ulimit#lungepi-files-dev", "/s3/lungepi-files-dev", "fuse", "_netdev,allow_other,--file-mode=0444,--dir-mode=0555,--stat-cache-ttl=0", "0", "0" ]
 
 write_files:
 - path: /opt/checkfiles_args.txt

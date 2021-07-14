@@ -151,7 +151,7 @@ output:
 runcmd:
 - set -ex
 # Manually install java
-- sudo -u ubuntu aws s3 cp --region=us-west-2 --recursive s3://t2depi-conf-prod/.aws ~ubuntu/.aws
+- sudo -u ubuntu aws s3 cp --region=us-west-2 --recursive s3://lungepi-conf-prod/.aws ~ubuntu/.aws
 - sudo mkdir -p /usr/lib/jvm
 - sudo chmod 777 /usr/lib/jvm
 - sudo tar -xzvf /home/ubuntu/.aws/jdk-8u211-linux-x64.tar.gz --directory /usr/lib/jvm/
@@ -192,7 +192,7 @@ runcmd:
 - mkdir /srv/encoded
 - chown encoded:encoded /srv/encoded
 - cd /srv/encoded
-- sudo -u encoded git clone --no-checkout https://github.com/T2DREAM/t2dream-portal.git .
+- sudo -u encoded git clone --no-checkout https://github.com/T2DREAM/lung-epigenome.git .
 - sudo -u encoded git checkout %(COMMIT)s
 - sudo add-apt-repository -y ppa:fkrull/deadsnakes-python2.7
 - sudo apt-get update
@@ -214,7 +214,7 @@ runcmd:
 - sudo -u encoded buildout bootstrap
 # - sudo -u encoded LANG=en_US.UTF-8 bin/buildout -c %(ROLE)s.cfg #issue with build
 - sudo LANG=en_US.UTF-8 bin/buildout
-- sudo -u encoded bin/aws s3 cp --recursive s3://t2depi-conf-prod/.aws ~ubuntu/.aws
+- sudo -u encoded bin/aws s3 cp --recursive s3://lungepi-conf-prod/.aws ~ubuntu/.aws
 - until sudo -u postgres psql postgres -c ""; do sleep 10; done
 - sudo -u encoded sh -c 'cat /dev/urandom | head -c 256 | base64 > session-secret.b64'
 - sudo -u encoded bin/create-mapping production.ini --app-name app

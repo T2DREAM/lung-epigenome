@@ -73,7 +73,7 @@ output:
 
 runcmd:
 # Manually install java
-- sudo -u ubuntu aws s3 cp --region=us-west-2 --recursive s3://t2depi-conf-prod/.aws ~ubuntu/.aws
+- sudo -u ubuntu aws s3 cp --region=us-west-2 --recursive s3://lungepi-conf-prod/.aws ~ubuntu/.aws
 - sudo mkdir -p /usr/lib/jvm
 - sudo chmod 777 /usr/lib/jvm
 - sudo tar -xzvf /home/ubuntu/.aws/jdk-8u211-linux-x64.tar.gz --directory /usr/lib/jvm/
@@ -101,7 +101,7 @@ runcmd:
 - mkdir /srv/encoded
 - chown encoded:encoded /srv/encoded
 - cd /srv/encoded
-- curl https://raw.githubusercontent.com/T2DREAM/t2dream-portal/master/cloudwatchmon-requirements.txt > cloudwatchmon-requirements.txt
+- curl https://raw.githubusercontent.com/T2DREAM/lung-epigenome/master/cloudwatchmon-requirements.txt > cloudwatchmon-requirements.txt
 - sudo sed -i -e 's/inet_interfaces = all/inet_interfaces = loopback-only/g' /etc/postfix/main.cf
 - PUBLIC_DNS_NAME="$(curl http://169.254.169.254/latest/meta-data/public-hostname)"
 - sudo sed -i "/myhostname/c\myhostname = $PUBLIC_DNS_NAME" /etc/postfix/main.cf

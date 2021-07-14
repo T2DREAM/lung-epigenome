@@ -149,7 +149,7 @@ output:
 
 runcmd:
 # Manually install java
-- sudo -u ubuntu aws s3 cp --region=us-west-2 --recursive s3://t2depi-conf-prod/.aws ~ubuntu/.aws
+- sudo -u ubuntu aws s3 cp --region=us-west-2 --recursive s3://lungepi-conf-prod/.aws ~ubuntu/.aws
 - sudo mkdir -p /usr/lib/jvm
 - sudo chmod 777 /usr/lib/jvm
 - sudo tar -xzvf /home/ubuntu/.aws/jdk-8u211-linux-x64.tar.gz --directory /usr/lib/jvm/
@@ -213,7 +213,7 @@ runcmd:
 - sudo pip3 install -U zc.buildout setuptools==43
 - sudo -u encoded buildout bootstrap
 - sudo -u encoded LANG=en_US.UTF-8 bin/buildout -c %(ROLE)s.cfg production-ini:region_search_instance=localhost:9200
-- sudo -u encoded bin/aws s3 cp --recursive s3://t2depi-conf-prod/.aws .aws
+- sudo -u encoded bin/aws s3 cp --recursive s3://lungepi-conf-prod/.aws .aws
 - until sudo -u postgres psql postgres -c ""; do sleep 10; done
 - sudo -u encoded sh -c 'cat /dev/urandom | head -c 256 | base64 > session-secret.b64'
 - sudo -u encoded bin/create-mapping production.ini --app-name app

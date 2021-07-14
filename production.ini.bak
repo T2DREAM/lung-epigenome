@@ -1,8 +1,8 @@
 [app:app]
 use = config:base.ini#app
 session.secret = %(here)s/session-secret.b64
-file_upload_bucket = t2depi-files-dev
-blob_bucket = t2depi-blobs-dev
+file_upload_bucket = lungepi-files-dev
+blob_bucket = lungepi-blobs-dev
 blob_store_profile_name = encoded-files-upload
 accession_factory = encoded.server_defaults.test_accession
 snp_search.server = localhost:9200

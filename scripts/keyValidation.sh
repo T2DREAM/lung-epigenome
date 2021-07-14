@@ -1,9 +1,9 @@
 #!/bin/bash
 
                 if [ $1 == "demo" ]; then
-                        bucket="t2depi-test-files-upload"
+                        bucket="lungepi-test-files-upload"
                 elif [ $1 == "prod" ]; then
-                		bucket="t2depi-files-dev"
+                		bucket="lungepi-files-dev"
                 else
                      echo "not a valid argument: requires "demo" or "prod""
                      exit
