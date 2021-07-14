@@ -1,34 +1,25 @@
 /* NavBar */
 .navbar-inverse {
     border: none;
-    border-bottom: 2px solid #DCDCDC;
-    background: #ffffff;
+    border-bottom: 0px solid #9e5c9e;
+    background: #c9a3c9;
     font-size: 1.25rem;
     .navbar-brand {
-        margin-left: 0px;
-	padding-left: 0px;
-	padding-top: 10px;
-	padding-right: 8px;
-        color: #696969;
-        font-size: 1.3rem;
-        font-weight: 400;
-	&:focus,
+        margin-left: -15px;
+        color: #fff;
+        font-size: 1.4rem;
+        font-weight: 200;
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
         &:hover {
-	    background-color: #DCDCDC;
+	    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.8);
         }
     }
 
-    .nav > li > button {
-        position: relative;
-        display: block;
-        padding: 10px 15px;
-        color: #696969;
-        background-color: transparent;
-        border: none;
-
+    .nav > li > a {
+        color: #fff;   
         &:focus,
         &:hover {
-            background-color: #DCDCDC;
+            background-color: #6b136a;
         }
 
         /* Disabled sign-in link */

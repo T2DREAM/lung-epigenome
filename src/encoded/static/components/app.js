@@ -14,7 +14,7 @@ import Home from './home';
 import newsHead from './page';
 
 const portal = {
-    portal_title: 'Diabetes Epigenome Atlas',
+    portal_title: 'Lung Genome Browser',
     global_sections: [
         {
             id: 'about',
@@ -272,7 +272,7 @@ class App extends React.Component {
             hostname: hrefInfo.hostname,
             port: hrefInfo.port,
             protocol: hrefInfo.protocol,
-            pathname: '/static/img/logo.png',
+            pathname: '/static/img/lung-logo6.png',
         };
         const logoUrl = url.format(logoHrefInfo);
 
