@@ -1,5 +1,5 @@
 /* Variables */
-$mainThemeColor: 			   #e8ecef; /* i.e. the background color ..for now */
+$mainThemeColor: 			   #FFFFFF; /* i.e. the background color ..for now */
 
 $nav-color-bg:                 #0a253d; // Navigation background color
 
@@ -11,7 +11,7 @@ $footerBackgroundHighlight:    #294b6a !default;
 
 $tableHeadFootBackgroundColor: #f5f5f5;
 
-$std-href-color:               #428bca;
+$std-href-color:               #932192;
 
 $mobile-font-factor:           1.2; // Amount text increases size on mobile
 
@@ -111,18 +111,4 @@ blockquote {
 .browser-error {
     margin: 10px;
     text-align: center;
-}
-
-
-.checkbox--right {
-	pointer: normal;
-
-	label {
-		cursor: default;
-	}
-
-	input[type="checkbox"] {
-		float: none;
-		margin-left: 10px;
-	}
 }

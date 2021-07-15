@@ -47,29 +47,17 @@ log = logging.getLogger(__name__)
 # - regulomeDb versions of ENCODED_ALLOWED_FILE_FORMATS, ENCODED_ALLOWED_STATUSES, add_encoded_to_regions_es()
 
 # Species and references being indexed
-SUPPORTED_ASSEMBLIES = ['hg19', 'GRCh38']
+SUPPORTED_ASSEMBLIES = ['hg19']
 
 ENCODED_ALLOWED_FILE_FORMATS = ['bed']
-ENCODED_ALLOWED_STATUSES = ['released', 'uploading']
+ENCODED_ALLOWED_STATUSES = ['released']
 RESIDENT_REGIONSET_KEY = 'resident_regionsets'  # in regions_es, keeps track of what datsets are resident in one place
 
 ENCODED_REGION_REQUIREMENTS = {
-    #'chromatin state': {
-    #    'output_type': ['semi-automated genome annotation'],
-    #    'file_format': ['bed']
-    #}
     'accessible chromatin': {
-        'output_type': ['peaks'],
+        'output_type': ['open chromatin regions'],
         'file_format': ['bed']
-        }
-    #'eQTL': {
-    #    'file_type': ['bed bed3+'],
-    #    'file_format': ['bed']
-    #    }
-    #'target gene predictions': {
-    #    'file_type': ['bed bed3+'],
-    #    'file_format': ['bed']
-    #   }
+    }
 }
 
 # On local instance, these are the only files that can be downloaded and regionalizable.  Currently only one is!

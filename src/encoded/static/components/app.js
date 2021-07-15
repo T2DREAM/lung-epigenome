@@ -22,7 +22,6 @@ const portal = {
             children: [
                 { id: 'projectoverview', title: 'Project overview', url: '/about/contributors/' },
                 { id: 'policies', title: 'Policies', url: '/data-access-policies/' },
-                { id: 'news', title: 'News', url: '/search/?type=Page&news=true&status=released' },
                 { id: 'acknowledgements', title: 'Acknowledgements', url: '/acknowledgements/' },
                 { id: 'contact', title: 'Contact', url: '/help/contacts/' },
             ],
@@ -42,8 +41,7 @@ const portal = {
             title: 'Tools',
             children: [
                 { id: 'region', title: 'Region Search', url: '/region-search/' },
-                { id: 'umap', title: 'Single Cell UMAP', url: 'http://www.single-cell.commondiseaseepigenome.org:5005' },
-                { id: 'expression', title: 'Gene Expression Profiles', url: 'https://www.single-cell.commondiseaseepigenome.org/RShiny' },
+                { id: 'expression', title: 'Gene Expression Profiles', url: 'http://www.tools.lungepigenome.org:3838/RShiny/' },
             ],
         },
         {
