@@ -179,7 +179,7 @@ def app_version(config):
     import subprocess
     try:
         version = subprocess.check_output(
-            ['git', '-C', os.path.dirname(__file__), 'describe']).decode('utf-8').strip()
+            ['git', '-C', os.path.dirname(__file__), 'describe', '--always']).decode('utf-8').strip()
         diff = subprocess.check_output(
             ['git', '-C', os.path.dirname(__file__), 'diff', '--no-ext-diff'])
         if diff:
